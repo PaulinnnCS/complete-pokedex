@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --background-body: #E7E7E7;
+    --main-text-color: #414141;
+
+    --background-interative-color: #FFFFFF;
+
+    --progress-info: #069206;
+    --remaining-info: #cc0b0b;
+
+    --btn-play: #E7E7E7;
+    --btn-play-shadow: #dadada;
+    --btn-play-hover: #ebebeb;
+
+    --input-pokemon-border: #E7E7E7;
+    --input-pokemon-shadow: #E7E7E7;
+
+    --btn-give-up:#D6D6D6;
+    --btn-give-up-border: #E7E7E7;
+    --btn-give-up-shadow: #A3A3A3;
+    --btn-give-up-hover: #dfdede;
+
+    --background-content-pokedex: #FFFFFF;
+    --pokedex-header: #D6D6D6;
+    --background-pk-code-icon-name: #D6D6D6;
+    --background-pk-icon-ball: #8d8d8d;
+    --backgorund-pokemon-name: #e7e7e7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+    color: var(--main-text-color);
+}
+
+body {
+    background-color: var(--background-body);
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+.main-content {
+    width: 90vw;
+    height: 95%;  
+}
+
+.interative-content{
+    background-color: var(--background-interative-color);
+    width: 100%;
+    height: 10%;
+    min-height: 85px;
+    border-radius: 10px 10px 0 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-section, .output-information {
+    width: 50%;
+}
+
+.input-section, .output-information, .pokedex-information, .game-information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokedex-information {
+    width: 50%;
+    flex-direction: column;
+    font-weight: 700;
+}
+
+#btn-play {
+    width: 70%;
+    height: 40px;
+    border: solid 1px var(--btn-play);
+    border-radius: 5px;
+    box-shadow: 0px 3px 0px var(--btn-play-shadow);
+    cursor: pointer;
+
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+#btn-play:hover {
+    background-color: var(--btn-play-hover);
+}
+
+.pokedex-progression {
+    color: var(--progress-info);
+}
+
+.pokedex-remaining {
+    color: var(--remaining-info);
+}
+
+.game-information {
+    width: 50%;
+    flex-direction: column;
+}
+
+#clock {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+#input-pokemon {
+    width: 70%;
+    height: 40px;
+    border: solid 1px var(--input-pokemon-border);
+    border-radius: 5px;
+    box-shadow: 1px 1px 0px var(--input-pokemon-shadow);
+    padding: 20px;
+}
+
+#give-up {
+    width: 80%;
+    height: 40px;
+    background-color: var(--btn-give-up);
+    border: solid 1.5px var(--btn-give-up-border);
+    border-radius: 3PX;
+    padding: 5px 25px;
+    box-shadow: 0px 3px var(--btn-give-up-shadow);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+#give-up:hover {
+    background-color: var(--btn-give-up-hover);
+}
+
+/*=============================*/
+
+.pokedex-content {
+    background-color: var(--background-content-pokedex);
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+}
+
+.pokedex-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 99.5%;
+    height: 50px;
+    min-height: 30px;
+    margin: 2.5px 0;
+    background-color: var(--pokedex-header);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.list-pokedex {
+    width: 99.5%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.pokemon {
+    width: 100%;
+    height: 26.85px;
+    display: grid;
+    grid-template-columns: 30px 50px minmax(130px,auto);
+}
+
+.pk-icon-ball, .pk-icon, .pk-code, .pk-name, #header-pk-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pk-icon-ball, .pk-icon, .pk-code, #header-pk-name {
+    font-weight: 700;
+    background-color: var(--background-pk-code-icon-name);
+    text-transform: uppercase;
+}
+
+.pk-code {
+    font-size: 0.8rem;
+}
+
+.pk-icon-ball img {
+    background-color: var(--background-pk-icon-ball);
+    border-radius: 100%;
+    width: 26px;
+}
+
+.pk-icon img {
+    width: 26px;
+}
+
+.pk-name {
+    background-color: var(--backgorund-pokemon-name);
+}
+
+.pk-name {
+    text-transform: capitalize;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 1200px) {
+    .list-pokedex {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
